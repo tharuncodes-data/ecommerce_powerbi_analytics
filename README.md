@@ -11,9 +11,18 @@ e-commerce data into actionable business insights.
 ---
 
 ## 📦 Dataset
-- Source: Kaggle – Brazilian E-Commerce Dataset
+
+Due to file size limitations, raw CSV files are not included in this repository.
+
+Dataset Source:
+- Kaggle – Brazilian E-Commerce Public Dataset
 - Records: ~100K orders
-- Files: Orders, Customers, Products, Payments, Reviews, Sellers, Geolocation
+- Files: Orders, Customers, Products, Payments, Reviews, Sellers, Geolocation,Order list
+
+Steps to access data:
+1. Download dataset from Kaggle
+2. Extract CSV files
+3. Load into PostgreSQL or Power BI
 
 ---
 
