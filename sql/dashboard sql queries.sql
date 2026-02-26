@@ -1,13 +1,13 @@
 /*		RUN DIRECT VIEWS HERE 
 
 
-SELECT * FROM pbi_executive_business_overview
+SELECT * FROM executive_business_overview
 
-SELECT * FROM bi_sales_product_performance_overview
+SELECT * FROM sales_product_performance_overview
 
-SELECT * FROM bi_customer_retention_overview
+SELECT * FROM customer_retention_overview
 
-SELECT * FROM bi_geographic_sales_overview
+SELECT * FROM geographic_sales_overview
 
 */
 
@@ -88,7 +88,7 @@ CREATE TABLE categories (
 
 /*	EXECUTIVE PERFORMANCE OVERVIEW	*/
 
-CREATE OR REPLACE VIEW pbi_executive_business_overview AS
+CREATE OR REPLACE VIEW executive_business_overview AS
 WITH base_orders AS (
     SELECT
         o.order_id,
@@ -137,12 +137,10 @@ LEFT JOIN customer_order_counts coc
 GROUP BY bo.order_month
 ORDER BY bo.order_month;
 
-select * from pbi_executive_business_overview
-
 /*	SALES PRODUCT PERFORMANCE	*/
 
 
-CREATE OR REPLACE VIEW bi_sales_product_performance_overview AS
+CREATE OR REPLACE VIEW sales_product_performance_overview AS
 WITH base_sales AS (
     SELECT
         o.order_id,
@@ -205,7 +203,7 @@ ORDER BY
 
 /*	CUSTOMER RETENTION OVERVIEW	*/
 
-CREATE OR REPLACE VIEW bi_customer_retention_overview AS
+CREATE OR REPLACE VIEW customer_retention_overview AS
 WITH base_orders AS (
     SELECT
         o.order_id,
@@ -267,7 +265,7 @@ ORDER BY
 	
 
 /*	GEOGRAPHIC SALES OVERVIEW	*/
-CREATE OR REPLACE VIEW bi_geographic_sales_overview AS
+CREATE OR REPLACE VIEW geographic_sales_overview AS
 WITH base_data AS (
     SELECT
         o.order_id,
@@ -323,3 +321,4 @@ ORDER BY
     total_revenue DESC,
 	avg_delivery_days desc,
 	order_month desc
+
